@@ -39,12 +39,13 @@
 }
 @include gridify(2, 400);
 @include gridify(4, 600);
+
 /* ---VARIABLES--- */
 
 $black_background: rgb( 25, 25, 25);
 $white_links: whitesmoke;
 $blue_highlights: rgb( 68, 151, 200);
-$gray_regfont: rgb( 69, 90, 100);
+$gray_regfont: rgb( 51, 51, 51);
 $yellow_buttons: rgb( 238, 191, 43);
 $main_font: 'Lora', serif;
 $sec_font: 'Oxygen', sans-serif;
@@ -53,11 +54,9 @@ $sec_font: 'Oxygen', sans-serif;
  */
 
 html {
-    height: 100%;
     margin: 0 auto;
 }
 body {
-    min-height: 100%;
     transition: opacity .25s ease;
 }
 .container {
@@ -65,54 +64,47 @@ body {
     display: block;
     font-size: 0;
     width: 100%;
+    // min-height: 100vh;
     & > * {
         display: inline-block;
         font-size: medium;
         vertical-align: top;
     }
-    & > .left {
-        display: inline-block;
-        width: 25%;
-    }
-    & > .right {
-        display: inline-block;
-        margin-left: 25%;
-        width: 68%;
-    }
 }
 .left {
     position: relative;
-    // width: 30%;
+    width: 30%;
     background-color: $black_background;
-    height: 100vh;
+    min-height: 100vh;
+    box-shadow: 0px 1px 5px #222;
+    animation: slideFromLeft 1s ease;
 }
 .about {
     & > * {
         font-family: $main_font;
-        color: $yellow_buttons;
+        color: $white_links;
     }
     & > .about-me {
         font-family: $sec_font;
-        font-size: .75em;
+        font-size: .75rem !important;
     }
 }
 header {
     font-size: 1.5em;
-    color: $white_links;
     text-align: center;
-    & > img {
+    & > a img {
         max-width: 50%;
         border-radius: 100%;
-        margin: 1em 0 0 .5em;
+        margin: 3em 0 0 .5em;
     }
     & > .social {
         text-align: center;
+        margin-top: 2em;
         & > * {
             margin: 0 1em 1em .5em;
             color: $yellow_buttons;
         }
         & > *:hover {
-            border-bottom: 2px solid $yellow_buttons;
             color: $blue_highlights;
         }
     }
@@ -130,7 +122,7 @@ header {
     }
 }
 .clicks {
-    font-family: $main_font;
+    font-family: $sec_font;
     color: $yellow_buttons;
     & > .links {
         text-align: center;
@@ -149,6 +141,47 @@ header {
 }
 .right {
     // margin-left: 30%;
-    // width: 70%;
-    height: 100vh;
+    padding: 2em;
+    width: 70%;
+    max-height: 100vh;
+    background-color: $gray_regfont;
+    color: $white_links;
+    font-family: $sec_font;
+    overflow-y: scroll;
+    animation: slideFromBottom 1s ease;
+    & > div {
+        font-family: $main_font;
+        font-size: 3em;
+    }
+    & > div i {
+        color: $blue_highlights;
+    }
+    & > div p {
+        font-size: 1rem;
+        font-family: $sec_font;
+        color: $yellow_buttons;
+    }
+}
+
+
+/* KEYFRAMES */
+@keyframes slideFromLeft {
+    0% {
+        transform: translateX(-50%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+@keyframes slideFromBottom {
+    0% {
+        transform: translateY(75%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
