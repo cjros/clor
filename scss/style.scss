@@ -1,15 +1,18 @@
 @import "../bower_components/normalize-scss/_normalize.scss";
 @import "../bower_components/typeplate-starter-kit/css/_typeplate.scss";
 @import "./mixins.scss";
-
+@import "../bower_components/font-awesome/css/font-awesome.min.css";
 /**
  * BOX-SIZING
  */
 
 *, *:before, *:after {
     box-sizing: border-box;
+    text-decoration: none;
+    &:hover {
+        transition: color .15s ease;
+    }
 }
-
 /**
  * GRIDS
  */
@@ -20,7 +23,6 @@
     font-size: 0;
     text-align: justify;
     position: relative;
-
     & > * {
         font-size: medium;
         text-align: left;
@@ -28,7 +30,6 @@
         width: 100%;
         vertical-align: top;
     }
-
     &:after {
         display: inline-block;
         width: 100%;
@@ -36,45 +37,118 @@
         font-size: medium;
     }
 }
-
 @include gridify(2, 400);
 @include gridify(4, 600);
+/* ---VARIABLES--- */
 
-/**
- * PACE (automatic pre-loader thingy)
- */
-
-.pace {
-    pointer-events: none;
-    user-select: none;
-    transition: all 1s ease;
-}
-
-.pace-inactive {
-    opacity: 0;
-}
-
-.pace-active {
-    opacity: 1;
-}
-
-.pace .pace-progress {
-    background: #2299dd;
-    position: fixed;
-    z-index: 2000;
-    top: 0;
-    right: 100%;
-    width: 100%;
-    height: 2px;
-    transition: all 1s ease;
-}
-
+$black_background: rgb( 25, 25, 25);
+$white_links: whitesmoke;
+$blue_highlights: rgb( 68, 151, 200);
+$gray_regfont: rgb( 69, 90, 100);
+$yellow_buttons: rgb( 238, 191, 43);
+$main_font: 'Lora', serif;
+$sec_font: 'Oxygen', sans-serif;
 /**
  * GENERAL
  */
 
-img {max-width:100%;}
-
+html {
+    height: 100%;
+    margin: 0 auto;
+}
 body {
+    min-height: 100%;
     transition: opacity .25s ease;
+}
+.container {
+    position: relative;
+    display: block;
+    font-size: 0;
+    width: 100%;
+    & > * {
+        display: inline-block;
+        font-size: medium;
+        vertical-align: top;
+    }
+    & > .left {
+        display: inline-block;
+        width: 25%;
+    }
+    & > .right {
+        display: inline-block;
+        margin-left: 25%;
+        width: 68%;
+    }
+}
+.left {
+    position: relative;
+    // width: 30%;
+    background-color: $black_background;
+    height: 100vh;
+}
+.about {
+    & > * {
+        font-family: $main_font;
+        color: $yellow_buttons;
+    }
+    & > .about-me {
+        font-family: $sec_font;
+        font-size: .75em;
+    }
+}
+header {
+    font-size: 1.5em;
+    color: $white_links;
+    text-align: center;
+    & > img {
+        max-width: 50%;
+        border-radius: 100%;
+        margin: 1em 0 0 .5em;
+    }
+    & > .social {
+        text-align: center;
+        & > * {
+            margin: 0 1em 1em .5em;
+            color: $yellow_buttons;
+        }
+        & > *:hover {
+            border-bottom: 2px solid $yellow_buttons;
+            color: $blue_highlights;
+        }
+    }
+}
+.title {
+    position: relative;
+    &:after {
+        content: '';
+        position: absolute;
+        border-bottom: 2px solid $yellow_buttons;
+        width: 25%;
+        bottom: -.5em;
+        left: 0;
+        transform: translateX(150%)
+    }
+}
+.clicks {
+    font-family: $main_font;
+    color: $yellow_buttons;
+    & > .links {
+        text-align: center;
+        & > * {
+            display: inline-block;
+            margin: 0 1em 1em 0;
+            & > * {
+                color: $yellow_buttons;
+                &:hover {
+                    border-bottom: 2px solid $yellow_buttons;
+                    color: $blue_highlights;
+                } 
+            }
+        }
+    }
+}
+.right {
+    // margin-left: 30%;
+    // width: 70%;
+    height: 100vh;
 }
