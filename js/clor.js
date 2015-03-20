@@ -4,17 +4,39 @@
 	Backbone.ClorRouter = Backbone.Router.extend({
 		initialize: function() {
 
+			this.collection = {
+				[{
+					project_name: 
+					image:
+					description:
+					link:
+					tools_used:
+				}, {
+					project_name: 
+					image:
+					description:
+					link:
+					tools_used:
+				}, {
+					project_name: 
+					image:
+					description:
+					link:
+					tools_used:
+				}
+			]}
+
 			Backbone.history.start();
 		},
 		routes: {
-			'blog': 'blog',
+			'projects': 'projects',
 			'*default': 'home'
 		},
 		home: function() {
 			console.log('hi');
 		},
-		blog: function() {
-			console.log('blog');
+		projects: function() {
+			console.log('projects');
 		}
 	});
 

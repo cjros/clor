@@ -25,9 +25,10 @@
     position: relative;
     & > * {
         font-size: medium;
-        text-align: left;
+        text-align: center;
         display: inline-block;
         width: 100%;
+        padding: 0 .5em .5em 0;
         vertical-align: top;
     }
     &:after {
@@ -37,8 +38,8 @@
         font-size: medium;
     }
 }
-@include gridify(2, 400);
-@include gridify(4, 600);
+// @include gridify(2, 400);
+@include gridify(3, 400);
 
 /* ---VARIABLES--- */
 
@@ -55,15 +56,19 @@ $sec_font: 'Oxygen', sans-serif;
 
 html {
     margin: 0 auto;
+    height: 100%;
 }
 body {
     transition: opacity .25s ease;
+    background-color: $black_background;
+    height: 100%;
 }
 .container {
     position: relative;
     display: block;
     font-size: 0;
     width: 100%;
+    height: 100%;
     // min-height: 100vh;
     & > * {
         display: inline-block;
@@ -72,11 +77,11 @@ body {
     }
 }
 .left {
-    position: relative;
+    position: fixed;
     width: 30%;
     background-color: $black_background;
-    min-height: 100vh;
-    box-shadow: 0px 1px 5px #222;
+    height: 100%;
+    box-shadow: 0px 1px 10px #222;
     animation: slideFromLeft 1s ease;
 }
 .about {
@@ -86,20 +91,25 @@ body {
     }
     & > .about-me {
         font-family: $sec_font;
-        font-size: .75rem !important;
+        font-size: medium !important;
     }
 }
 header {
+    position: relative;
     font-size: 1.5em;
     text-align: center;
     & > a img {
         max-width: 50%;
         border-radius: 100%;
         margin: 3em 0 0 .5em;
+        border: 2px solid $yellow_buttons;
+        &:hover {
+            border: 5px solid $blue_highlights;
+        }
     }
     & > .social {
         text-align: center;
-        margin-top: 2em;
+        margin-top: 1rem;
         & > * {
             margin: 0 1em 1em .5em;
             color: $yellow_buttons;
@@ -123,12 +133,11 @@ header {
 }
 .clicks {
     font-family: $sec_font;
-    color: $yellow_buttons;
     & > .links {
         text-align: center;
         & > * {
             display: inline-block;
-            margin: 0 1em 1em 0;
+            margin: 1em 1em 1em 0;
             & > * {
                 color: $yellow_buttons;
                 &:hover {
@@ -140,29 +149,70 @@ header {
     }
 }
 .right {
-    // margin-left: 30%;
-    padding: 2em;
+    margin-left: 30%;
+    padding: 1em;
     width: 70%;
-    max-height: 100vh;
+    min-height: 100%;
     background-color: $gray_regfont;
     color: $white_links;
-    font-family: $sec_font;
-    overflow-y: scroll;
-    animation: slideFromBottom 1s ease;
+    font-family: $main_font;
+    animation: slideFromBottom 1.5s ease;
     & > div {
         font-family: $main_font;
         font-size: 3em;
+        font-weight: bold;
     }
     & > div i {
-        color: $blue_highlights;
+        color: $yellow_buttons;
     }
     & > div p {
+        margin-left: 3.5em;
+        font-weight: normal !important;
         font-size: 1rem;
         font-family: $sec_font;
         color: $yellow_buttons;
     }
 }
-
+.right-about,
+.right-goals {
+    // column-count: 3;
+    text-align: center;
+    font-size: 1rem !important;
+    color: $yellow_buttons;
+    // margin-left: 3.5em;
+    font-family: $sec_font;
+    font-weight: normal !important;
+    // & > div {
+    // }
+    & > div p {
+        margin: 0 !important;
+        font-family: $main_font;
+        font-size: 1.5rem;
+        font-weight: bold !important;
+        color: $white_links;
+    }
+}
+span {
+    font-weight: bold;
+    color: $blue_highlights;
+}
+.toolsList {
+    font-size: 1rem;
+    color: $yellow_buttons;
+    margin-left: 3.5em;
+    & > .cols {
+        font-weight: normal !important;
+        font-family: $sec_font;
+        column-count: 5;
+        font-size: medium;
+    }
+}
+.goals {
+    margin-top: .5em;
+    & > p {
+        font-size: medium !important;
+    }
+}
 
 /* KEYFRAMES */
 @keyframes slideFromLeft {
@@ -177,11 +227,11 @@ header {
 }
 @keyframes slideFromBottom {
     0% {
-        transform: translateY(75%);
+        // transform: translateY(75%);
         opacity: 0;
     }
     100% {
-        transform: translateY(0);
+        // transform: translateY(0);
         opacity: 1;
     }
 }
