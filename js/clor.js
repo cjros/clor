@@ -4,27 +4,27 @@
 	Backbone.ClorRouter = Backbone.Router.extend({
 		initialize: function() {
 
-			this.collection = {
-				[{
-					project_name: 
-					image:
-					description:
-					link:
-					tools_used:
-				}, {
-					project_name: 
-					image:
-					description:
-					link:
-					tools_used:
-				}, {
-					project_name: 
-					image:
-					description:
-					link:
-					tools_used:
-				}
-			]}
+			// this.collection = {
+			// 	[{
+			// 		project_name: 
+			// 		image:
+			// 		description:
+			// 		link:
+			// 		tools_used:
+			// 	}, {
+			// 		project_name: 
+			// 		image:
+			// 		description:
+			// 		link:
+			// 		tools_used:
+			// 	}, {
+			// 		project_name: 
+			// 		image:
+			// 		description:
+			// 		link:
+			// 		tools_used:
+			// 	}
+			// ]}
 
 			Backbone.history.start();
 		},
