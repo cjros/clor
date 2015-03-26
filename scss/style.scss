@@ -157,14 +157,17 @@ header {
     color: $white_links;
     font-family: $main_font;
     animation: slideFromBottom 1.5s ease;
-    & > div {
+    & > .more, .tech {
         font-family: $main_font;
         font-size: 3em;
         font-weight: bold;
+        & > i {
+            color: $yellow_buttons;
+        }
     }
-    & > div i {
-        color: $yellow_buttons;
-    }
+    // & > div i {
+    //     color: $yellow_buttons;
+    // }
     & > div p {
         margin-left: 3.5em;
         font-weight: normal !important;
@@ -210,12 +213,12 @@ span {
         font-size: medium;
     }
 }
-.goals {
-    margin-top: .5em;
-    & > p {
-        font-size: medium !important;
-    }
-}
+// .goals {
+//     margin-top: .5em;
+//     & > p {
+//         font-size: medium !important;
+//     }
+// }
 
 /* KEYFRAMES */
 @keyframes slideFromLeft {
