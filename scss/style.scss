@@ -195,6 +195,9 @@ header {
 span {
     font-weight: bold;
     color: $blue_highlights;
+    & > * {
+        color: $blue_highlights;
+    }
 }
 .toolsList {
     font-size: 1rem;
