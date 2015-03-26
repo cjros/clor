@@ -195,7 +195,7 @@ header {
 span {
     font-weight: bold;
     color: $blue_highlights;
-    & > * {
+    & > a {
         color: $blue_highlights;
     }
 }
