@@ -17,7 +17,7 @@
 					' and check out meetups the chatroom is interested in.',
 					link: 'http://cjros.github.com/locusity-app/',
 					gh_link: 'http://github.com/cjros/locusity-app/',
-					tools_used: 'backbonejs, react, sass, html5 geolocation API, pubnub sdk, gmaps API, meetup.com API, git'
+					tools_used: 'backbonejs, react, sass, html5 geolocation API, gmaps API, meetup.com API, pubnub sdk, git'
 				}, {
 					project_name: 'CoffeeSnob',
 					image: './images/coffeesnob.png',
@@ -25,7 +25,7 @@
 					' and data models to bring a project into the building phase',
 					link: 'http://cjros.github.io/yelpee/',
 					gh_link: 'http://github.com/cjros/yelpee/',
-					tools_used: 'backbonejs, react, REST APIs, git'
+					tools_used: 'backbonejs, react, custom API, git'
 				},
 				{
 					project_name: 'My own Etsy',
@@ -33,7 +33,7 @@
 					description: 'first experience with APIs; pull etsy information to create my own etsy-style website',
 					link: 'http://cjros.github.io/etsy/',
 					gh_link: 'http://github.com/cjros/etsy/',
-					tools_used: 'backbone, REST APIs, git'
+					tools_used: 'backbonejs, Etsy API, git'
 				}
 			];
 
