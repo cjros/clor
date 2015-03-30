@@ -135,11 +135,13 @@ header {
 }
 .clicks {
     font-family: $sec_font;
+    padding: .25em;
     & > .links {
         text-align: center;
+        // margin: 0 .5em 0 .5em;
         & > * {
             display: inline-block;
-            margin: 1em 1em 1em 0;
+            // margin: 1em 1em 1em 0;
             & > * {
                 color: $yellow_buttons;
                 &:hover {
@@ -151,7 +153,7 @@ header {
     }
 }
 .projects {
-    padding-right: 1em;
+    padding-right: .5em;
     & > i {
         color: $yellow_buttons;
         font-size: 3em;
@@ -184,7 +186,7 @@ header {
                 & > .desc-container {
                     position: absolute;
                     background-color: rgba( 25, 25, 25, .9);
-                    bottom: 5px;
+                    bottom: 0px;
                     padding: 1em;
                     border-radius: 0 0 10px 10px;
                     border: 1px solid $yellow_buttons;
